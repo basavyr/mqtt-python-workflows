@@ -10,8 +10,12 @@ print(platform.uname())
 new_client=mqtt.Client()
 new_client.on_connect
 print(new_client)
-local_port=1884
-new_client.connect('0.0.0.0',local_port, 60)
+local_port1=1883
+local_port2=1884
+local_port3=1885
+new_client.connect('0.0.0.0',local_port1, 60)
+new_client.connect('0.0.0.0',local_port2, 60)
+new_client.connect('0.0.0.0',local_port3, 60)
 for i in range(10):
 	new_client.publish("test/",'hey for v0')
 	new_client.publish("test/v2",'hey for v2')
